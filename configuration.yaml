@@ -35,7 +35,7 @@ group:
     name: Woonkamer
     entities:
       - media_player.woonkamer
-      - sensor.cresta_woonkamer
+      - sensor.cresta_woonkamer_temperature
 
   clock:
     name: Date and Time
@@ -45,15 +45,24 @@ group:
   environment:
     name: Environment
     entities:
+     - sensor.pws_location
      - sun.sun
      - sensor.yr_symbol
+     - sensor.pws_alerts
+     - sensor.pws_observation_time
+     - sensor.pws_precip_1hr_metric
+     - sensor.pws_precip_today_metric
+     - sensor.pws_temp_c
+     - sensor.pws_visibility_km
+     - sensor.pws_wind_dir
+     - sensor.pws_wind_kph
    
 
 frontend:
 
 http:
   # Uncomment this to add a password (recommended!)
-  api_password: ***REMOVED***
+  api_password: !secret http_password
 
 # Checks for available updates
 updater:
@@ -121,35 +130,41 @@ switch:
 
 sensor:
 # Weather prediction
-   - platform: yr
+  - platform: yr
 # Time and date
-   - platform: time_date
-     display_options:
-       - date_time
-   - platform: rfxtrx
-     automatic_add: True
-     devices:
-       0a5207013b0e00d02d0169:
-         name: Cresta woonkamer
+  - platform: time_date
+    display_options:
+      - date_time
+  - platform: rfxtrx
+    automatic_add: True
+    devices:
+      0a5207013b0e00d02d0169:
+        name: Cresta woonkamer
 
-
+  - platform: wunderground
+    api_key: !secret wunderground_key
+    monitored_conditions:
+      - station_id
+      - alerts
+      - observation_time
+      - precip_1hr_metric
+      - precip_today_metric
+      - temp_c
+      - visibility_km
+      - wind_dir
+      - wind_kph
 # Living room camera
 camera:
-#  - platform: mjpeg
-#    mjpeg_url: http://192.168.178.50/videostream.cgi?user=USERNAME&pwd=PASSWORD
-#    name: Huiskamer
-#    username: admin
-#    password: ***REMOVED***
   - platform: foscam
     ip: 192.168.178.57
     port: 88
     username: timt
-    password: ***REMOVED***
+    password: !secret camera_password
 
 notify:
   - platform: pushbullet
     name: Tim
-    api_key: ***REMOVED***
+    api_key: !secret pushbullet_key
 
 automation:
   - alias: 'warn when door opens'
@@ -196,3 +211,4 @@ script:
         data:
           message: 'De voordeur staat nog open'
           title: 'Warning front door open'
+
