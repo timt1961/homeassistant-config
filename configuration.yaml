@@ -1,0 +1,198 @@
+homeassistant:
+  # Name of the location where Home Assistant is running
+  name: Meerzand
+  # Location required to calculate the time the sun rises and sets
+  latitude: 51.4432618
+  longitude: 5.4087704
+  # Impacts weather/sunrise data (altitude above sea level in meters)
+  elevation: 73
+  # metric for Metric, imperial for Imperial
+  unit_system: metric
+  # Pick yours from here:
+  # http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
+  time_zone: Europe/Amsterdam
+  customize:
+     script.voordeur_open:
+       hidden: True 
+     device_tracker.asuswrtn66ufritzbox:
+       friendly_name: ASUS WRT-N66U
+       icon: mdi:router-wireless
+     device_tracker.nexuswoonkamer:
+       icon: mdi:tablet-android
+     device_tracker.printerlanfritzbox:
+       icon: mdi:printer
+
+group:
+  network:
+    name: Network
+    entities:
+      - device_tracker.asuswrtn66ufritzbox
+      - device_tracker.nexuswoonkamer
+      - device_tracker.printerlanfritzbox
+      - device_tracker.roamerfritzbox
+      - device_tracker.switch2
+  woonkamer:
+    name: Woonkamer
+    entities:
+      - media_player.woonkamer
+      - sensor.cresta_woonkamer
+
+  clock:
+    name: Date and Time
+    entities:
+      - sensor.date__time
+
+  environment:
+    name: Environment
+    entities:
+     - sun.sun
+     - sensor.yr_symbol
+   
+
+frontend:
+
+http:
+  # Uncomment this to add a password (recommended!)
+  api_password: ***REMOVED***
+
+# Checks for available updates
+updater:
+
+# Discover some devices automatically
+discovery:
+
+# Allows you to issue voice commands from the frontend in enabled browsers
+conversation:
+
+# Enables support for tracking state changes over time.
+history:
+
+# View all events in a logbook
+logbook:
+
+# Track the sun
+sun:
+
+#customization
+
+# turn on local mqtt broker
+mqtt:
+  broker: localhost
+  port: 1883
+  client_id: homeassistant1
+  keepalive: 60
+  protocol: 3.1
+
+
+# Location/geofencing etc.
+device_tracker:
+   - platform: nmap_tracker
+     hosts: 192.168.178.1/24
+   - platform: owntracks
+     max_gps_accuracy: 200
+     waypoints: True
+       
+rfxtrx:
+  device: /dev/ttyUSB0
+  debug: True
+
+cover:
+  platform: rfxtrx
+  automatic_add: True
+  devices:
+    071a03000D080601: # Experiment
+      name: Raam achter
+
+media_player:
+  - platform: cast
+
+light:
+  - platform: rfxtrx
+    automatic_add: True
+
+switch:
+  - platform: rfxtrx
+    automatic_add: True
+    devices:
+      0b110001014206060a010f50:
+        name: Voordeur
+
+ 
+
+sensor:
+# Weather prediction
+   - platform: yr
+# Time and date
+   - platform: time_date
+     display_options:
+       - date_time
+   - platform: rfxtrx
+     automatic_add: True
+     devices:
+       0a5207013b0e00d02d0169:
+         name: Cresta woonkamer
+
+
+# Living room camera
+camera:
+#  - platform: mjpeg
+#    mjpeg_url: http://192.168.178.50/videostream.cgi?user=USERNAME&pwd=PASSWORD
+#    name: Huiskamer
+#    username: admin
+#    password: ***REMOVED***
+  - platform: foscam
+    ip: 192.168.178.57
+    port: 88
+    username: timt
+    password: ***REMOVED***
+
+notify:
+  - platform: pushbullet
+    name: Tim
+    api_key: ***REMOVED***
+
+automation:
+  - alias: 'warn when door opens'
+    initial_state: True
+    hide_entity: True
+    trigger: 
+      platform: state
+      entity_id: switch.voordeur
+      from: 'off'
+      to: 'on'
+    action: 
+      service: notify.Tim
+      data:
+        message: "Door open"
+        title: "Door open"
+  - alias: "voordeur nog open"
+    hide_entity: True
+    trigger:
+      platform: state
+      entity_id: switch.voordeur
+      from: 'off'
+      to: 'on'
+    action:
+      service: homeassistant.turn_on
+      entity_id: script.voordeur_open
+  - alias: 'voordeur dicht'
+    hide_entity: True
+    trigger:
+      platform: state
+      entity_id: switch.voordeur
+      from: 'on'
+      to: 'off'
+    action: 
+      service: homeassistant.turn_off
+      entity_id: script.voordeur_open
+
+script:
+  voordeur_open:
+    alias: 'voordeur staat open'
+    sequence:
+      - delay:
+          minutes: 5
+      - service: notify.Tim
+        data:
+          message: 'De voordeur staat nog open'
+          title: 'Warning front door open'
