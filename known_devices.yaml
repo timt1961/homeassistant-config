@@ -1,0 +1,142 @@
+
+00626e68a49d:
+  hide_if_away: false
+  mac: 00:62:6E:68:A4:9D
+  name: Foscam C1
+  picture:
+  track: true
+
+chromecastfritzbox:
+  hide_if_away: false
+  mac: 54:60:09:0A:16:2E
+  name: Chromecast
+  picture:
+  track: true
+
+roamerfritzbox:
+  hide_if_away: false
+  mac: 08:60:6E:0D:84:41
+  name: Roamer
+  picture:
+  track: true
+
+androidc71ef92cc08d8d4efritzbox:
+  hide_if_away: false
+  mac: 48:5A:3F:4D:34:4C
+  name: Note3
+  picture:
+  track: false
+
+switch1fritzbox:
+  hide_if_away: false
+  mac: 90:EF:68:C2:20:9C
+  name: Switch1
+  picture:
+  track: true
+
+wdtvlivefritzbox:
+  hide_if_away: false
+  mac: 00:90:A9:64:DD:5B
+  name: WDTVLive
+  picture:
+  track: true
+
+fritzbox:
+  hide_if_away: false
+  mac: C8:0E:14:0D:F4:78
+  name: fritz.box
+  picture:
+  track: true
+
+printerlanfritzbox:
+  hide_if_away: false
+  mac: 30:CD:A7:A2:21:02
+  name: Printer
+  picture:
+  track: true
+
+androidd9cbc2191aebf47ffritzbox:
+  hide_if_away: false
+  mac: D8:50:E6:75:66:CA
+  name: Nexus 7 Tim
+  picture:
+  track: true
+
+tvwoonkamerfritzbox:
+  hide_if_away: false
+  mac: 50:7E:5D:C2:72:D9
+  name: TV-woonkamer
+  picture:
+  track: true
+
+4c9efff6ea6b:
+  hide_if_away: false
+  mac: 4C:9E:FF:F6:EA:6B
+  name: 4c9efff6ea6b
+  picture:
+  track: false
+
+asuswrtn66ufritzbox:
+  hide_if_away: false
+  mac: 50:46:5D:00:89:D0
+  name: Asus WRT-N66U
+  picture:
+  track: true
+
+esp040d9efritzbox:
+  hide_if_away: false
+  mac: D0:27:00:04:0D:9E
+  name: Lamp Bank
+  picture:
+  track: true
+
+harmonyhubfritzbox:
+  hide_if_away: false
+  mac: 00:04:20:E8:68:B1
+  name: HarmonyHub
+  picture:
+  track: true
+
+roamerfritzbox_2:
+  hide_if_away: false
+  mac: 00:11:32:0C:7A:48
+  name: Storer
+  picture:
+  track: true
+
+homeassistant_tim:
+  hide_if_away: false
+  mac:
+  name: homeassistant
+  picture:
+  track: false
+
+owntracks_tim:
+  hide_if_away: false
+  mac: 48:5A:3F:4D:34:4C
+  name: Tim
+  picture:
+  gravatar: tim.timmerman@gmail.com
+  track: true
+
+androidecd35bc7245a313afritzbox:
+  hide_if_away: false
+  mac: 84:EB:18:12:09:2E
+  name: Moto 360
+  picture:
+  track: true
+
+ps4151a9efritzbox:
+  hide_if_away: false
+  mac: 80:EA:23:66:E1:58
+  name: PS4-151A9E.fritz.box
+  picture:
+  track: true
+
+roamerfritzbox_3:
+  hide_if_away: false
+  mac: 60:36:DD:90:22:16
+  name: Roamer.fritz.box
+  picture:
+  track: true
+  vendor:
