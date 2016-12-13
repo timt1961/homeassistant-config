@@ -21,6 +21,22 @@ homeassistant:
        icon: mdi:tablet-android
      device_tracker.printerlanfritzbox:
        icon: mdi:printer
+     sensor.pws_temp_c:
+       friendly_name: Buitentemperatuur
+     sensor.pws_wind_dir:
+       friendly_name: Windrichting
+     sensor.pws_wind_kph:
+       friendly_name: Windsnelheid
+     sensor.pws_alerts:
+       friendly_name: Alerts
+     sensor.pws_observation_time:
+       friendly_name: Laatste meting
+     sensor.pws_precip_1hr_metric:
+       friendly_name: Regen (1 uur)
+     sensor.pws_precip_today_metric:
+       friendly_name: Regen vandaag
+     sensor.pws_visibility_km:
+       friendly_name: Zicht (km)
 
 group:
   network:
