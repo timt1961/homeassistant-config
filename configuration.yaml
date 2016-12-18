@@ -38,6 +38,11 @@ homeassistant:
      sensor.pws_visibility_km:
        friendly_name: Zicht (km)
 
+logger:
+   default: error
+   logs:
+     homeassistant.components.rfxtrx: debug
+     
 group:
   network:
     name: Network
@@ -125,8 +130,16 @@ cover:
   platform: rfxtrx
   automatic_add: True
   devices:
-    071a03000D080601: # Experiment
+    071a03000d080601: 
       name: Raam achter
+    071a03000d080602:
+      name: Raam zijkant
+    071a03000d080603:
+      name: Raam Links voor
+    071a03000d080604:
+      name: Raam Midden voor
+    071a03000d080609:
+      name: Raam Rechts voor
 
 media_player:
   - platform: cast

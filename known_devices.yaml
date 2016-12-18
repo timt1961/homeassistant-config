@@ -140,3 +140,27 @@ roamerfritzbox_3:
   picture:
   track: true
   vendor:
+
+androidcf8137accb28335dfritzbox:
+  hide_if_away: false
+  mac: E4:90:7E:9F:CC:42
+  name: android-cf8137accb28335d.fritz.box
+  picture:
+  track: true
+  vendor:
+
+android9c8eaecde5fb53aafritzbox:
+  hide_if_away: false
+  mac: E0:98:61:70:73:DF
+  name: android-9c8eaecde5fb53aa.fritz.box
+  picture:
+  track: true
+  vendor:
+
+android466a73f9b8c4db26fritzbox:
+  hide_if_away: false
+  mac: B8:64:91:B1:9F:FB
+  name: android-466a73f9b8c4db26.fritz.box
+  picture:
+  track: true
+  vendor:
