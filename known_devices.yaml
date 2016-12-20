@@ -164,3 +164,19 @@ android466a73f9b8c4db26fritzbox:
   picture:
   track: true
   vendor:
+
+esp07a50afritzbox:
+  hide_if_away: false
+  mac: 60:01:94:07:A5:0A
+  name: ESP-07A50A.fritz.box
+  picture:
+  track: true
+  vendor:
+
+esp071fe7fritzbox:
+  hide_if_away: false
+  mac: 60:01:94:07:1F:E7
+  name: ESP-071FE7.fritz.box
+  picture:
+  track: true
+  vendor:
