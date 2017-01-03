@@ -76,13 +76,6 @@ tvwoonkamerfritzbox:
   picture:
   track: false
 
-asuswrtn66ufritzbox:
-  hide_if_away: false
-  mac: 50:46:5D:00:89:D0
-  name: Asus WRT-N66U
-  picture:
-  track: true
-
 esp040d9efritzbox:
   hide_if_away: false
   mac: D0:27:00:04:0D:9E
@@ -177,6 +170,54 @@ esp071fe7fritzbox:
   hide_if_away: false
   mac: 60:01:94:07:1F:E7
   name: ESP-071FE7.fritz.box
+  picture:
+  track: true
+  vendor:
+
+androidc2f0407f8a524011fritzbox:
+  hide_if_away: false
+  mac: 9C:5C:8E:E3:DE:1E
+  name: android-c2f0407f8a524011.fritz.box
+  picture:
+  track: true
+  vendor:
+
+chromecastfritzbox_2:
+  hide_if_away: false
+  mac: 10:4F:A8:5E:CC:18
+  name: Chromecast.fritz.box
+  picture:
+  track: true
+  vendor:
+
+android645bc941b5487643fritzbox:
+  hide_if_away: false
+  mac: 50:46:5D:15:91:13
+  name: android-645bc941b5487643.fritz.box
+  picture:
+  track: true
+  vendor:
+
+androidc56b08947e9bdc03fritzbox:
+  hide_if_away: false
+  mac: 14:32:D1:F3:09:52
+  name: android-c56b08947e9bdc03.fritz.box
+  picture:
+  track: true
+  vendor:
+
+iphonefritzbox:
+  hide_if_away: false
+  mac: 60:92:17:0E:D7:3B
+  name: iPhone.fritz.box
+  picture:
+  track: true
+  vendor:
+
+rtac68u8110fritzbox:
+  hide_if_away: false
+  mac: 38:D5:47:1F:81:10
+  name: RT-AC68U
   picture:
   track: true
   vendor:

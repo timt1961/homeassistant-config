@@ -14,8 +14,8 @@ homeassistant:
   customize:
      script.voordeur_open:
        hidden: True 
-     device_tracker.asuswrtn66ufritzbox:
-       friendly_name: ASUS WRT-N66U
+     device_tracker.rtac68u8110fritzbox:
+       friendly_name: ASUS RT AC-68U
        icon: mdi:router-wireless
      device_tracker.nexuswoonkamer:
        icon: mdi:tablet-android
@@ -51,7 +51,7 @@ group:
   network:
     name: Network
     entities:
-      - device_tracker.asuswrtn66ufritzbox
+      - device_tracker.rtac68u8110fritzbox
       - device_tracker.nexuswoonkamer
       - device_tracker.printerlanfritzbox
       - device_tracker.roamerfritzbox
