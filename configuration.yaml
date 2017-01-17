@@ -162,6 +162,7 @@ switch:
   - platform: mqtt
     name: Lamp 1
     command_topic: "cmnd/lamp1/power"
+    state_topic: "stat/lamp1/+"
     
 
  

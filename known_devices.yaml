@@ -221,3 +221,11 @@ rtac68u8110fritzbox:
   picture:
   track: true
   vendor:
+
+raspberrypifritzbox:
+  hide_if_away: false
+  mac: B8:27:EB:9A:4F:83
+  name: raspberrypi.fritz.box
+  picture:
+  track: true
+  vendor:
