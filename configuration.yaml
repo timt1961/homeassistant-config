@@ -88,6 +88,8 @@ frontend:
 http:
   # Uncomment this to add a password (recommended!)
   api_password: !secret http_password
+  ssl_certificate: /etc/letsencrypt/live/homer.timt.org/fullchain.pem
+  ssl_key: /etc/letsencrypt/live/homer.timt.org/privkey.pem
 
 # Checks for available updates
 updater:
