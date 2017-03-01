@@ -94,6 +94,9 @@ http:
 # Checks for available updates
 updater:
 
+# Enable configuration panel
+config:
+
 # Discover some devices automatically
 discovery:
 
@@ -134,7 +137,7 @@ rfxtrx:
 
 cover:
   platform: rfxtrx
-  automatic_add: True
+  automatic_add: False
   devices:
     071a03000d080601: 
       name: Raam achter

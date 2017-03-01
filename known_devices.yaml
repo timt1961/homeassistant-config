@@ -117,7 +117,7 @@ androidecd35bc7245a313afritzbox:
   mac: 84:EB:18:12:09:2E
   name: Moto 360
   picture:
-  track: true
+  track: false
 
 ps4151a9efritzbox:
   hide_if_away: false
@@ -139,7 +139,7 @@ androidcf8137accb28335dfritzbox:
   mac: E4:90:7E:9F:CC:42
   name: android-cf8137accb28335d.fritz.box
   picture:
-  track: true
+  track: false
   vendor:
 
 android9c8eaecde5fb53aafritzbox:
@@ -147,7 +147,7 @@ android9c8eaecde5fb53aafritzbox:
   mac: E0:98:61:70:73:DF
   name: android-9c8eaecde5fb53aa.fritz.box
   picture:
-  track: true
+  track: false
   vendor:
 
 android466a73f9b8c4db26fritzbox:
@@ -155,7 +155,7 @@ android466a73f9b8c4db26fritzbox:
   mac: B8:64:91:B1:9F:FB
   name: android-466a73f9b8c4db26.fritz.box
   picture:
-  track: true
+  track: false
   vendor:
 
 esp07a50afritzbox:
@@ -163,7 +163,7 @@ esp07a50afritzbox:
   mac: 60:01:94:07:A5:0A
   name: ESP-07A50A.fritz.box
   picture:
-  track: true
+  track: false
   vendor:
 
 esp071fe7fritzbox:
@@ -171,7 +171,7 @@ esp071fe7fritzbox:
   mac: 60:01:94:07:1F:E7
   name: ESP-071FE7.fritz.box
   picture:
-  track: true
+  track: false
   vendor:
 
 androidc2f0407f8a524011fritzbox:
@@ -179,7 +179,7 @@ androidc2f0407f8a524011fritzbox:
   mac: 9C:5C:8E:E3:DE:1E
   name: android-c2f0407f8a524011.fritz.box
   picture:
-  track: true
+  track: false
   vendor:
 
 chromecastfritzbox_2:
@@ -187,7 +187,7 @@ chromecastfritzbox_2:
   mac: 10:4F:A8:5E:CC:18
   name: Chromecast.fritz.box
   picture:
-  track: true
+  track: false
   vendor:
 
 android645bc941b5487643fritzbox:
@@ -195,7 +195,7 @@ android645bc941b5487643fritzbox:
   mac: 50:46:5D:15:91:13
   name: android-645bc941b5487643.fritz.box
   picture:
-  track: true
+  track: false
   vendor:
 
 androidc56b08947e9bdc03fritzbox:
@@ -203,7 +203,7 @@ androidc56b08947e9bdc03fritzbox:
   mac: 14:32:D1:F3:09:52
   name: android-c56b08947e9bdc03.fritz.box
   picture:
-  track: true
+  track: false
   vendor:
 
 iphonefritzbox:
@@ -211,7 +211,7 @@ iphonefritzbox:
   mac: 60:92:17:0E:D7:3B
   name: iPhone.fritz.box
   picture:
-  track: true
+  track: false
   vendor:
 
 rtac68u8110fritzbox:
@@ -229,3 +229,11 @@ raspberrypifritzbox:
   picture:
   track: true
   vendor:
+
+android1bf45eab15b87b8bfritzbox:
+  hide_if_away: false
+  mac: 58:48:22:7A:BB:A9
+  name: android-1bf45eab15b87b8b.fritz.box
+  picture:
+  track: false
+  vendor: Sony Mobile Communications AB
