@@ -159,7 +159,7 @@ light:
 
 switch:
   - platform: rfxtrx
-    automatic_add: True
+    automatic_add: False 
     devices:
       0b110001014206060a010f50:
         name: Voordeur
