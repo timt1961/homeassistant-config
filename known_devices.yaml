@@ -106,7 +106,7 @@ homeassistant_tim:
 
 owntracks_tim:
   hide_if_away: false
-  mac: 48:5A:3F:4D:34:4C
+  mac: 94:65:2D:23:8B:7F
   name: Tim
   picture:
   gravatar: tim.timmerman@gmail.com
@@ -233,7 +233,15 @@ raspberrypifritzbox:
 android1bf45eab15b87b8bfritzbox:
   hide_if_away: false
   mac: 58:48:22:7A:BB:A9
-  name: android-1bf45eab15b87b8b.fritz.box
+  name: Saskia
   picture:
-  track: false
+  track: True
   vendor: Sony Mobile Communications AB
+
+androidb3276ca67e843db4fritzbox:
+  hide_if_away: false
+  mac: 94:65:2D:23:8B:7F
+  name: Tim
+  gravatar: tim.timmerman@gmail.com
+  track: true
+  vendor: OnePlus Technology (Shenzhen) Co., Ltd
