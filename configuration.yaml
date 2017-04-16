@@ -169,7 +169,18 @@ switch:
     command_topic: "cmnd/lamp1/power"
     state_topic: "stat/lamp1/+"
     
-
+#
+# Attempt to combine covers
+  - platform: template
+    covers:
+      rightmost:
+        value_template "{{ is_state('cover.raam_rechts_voor', 'close' }}"
+        command_open:
+          service: cover.command_open
+          entity_id: cover.raam_midden_voor
+        command_close:
+          service: cover.command_close
+          entity_id: cover.raam_midden_voor
  
 
 sensor:
