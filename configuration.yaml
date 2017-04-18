@@ -81,7 +81,16 @@ group:
      - sensor.pws_visibility_km
      - sensor.pws_wind_dir
      - sensor.pws_wind_kph
-   
+
+  balcony_window:
+    entities:
+      - cover.raam_midden_voor
+      - cover.raam_rechts_voor   
+  balcony_master_switch:
+    name: balcony
+    entities:
+      - group.balcony_window
+
 
 frontend:
 
@@ -136,19 +145,29 @@ rfxtrx:
   debug: True
 
 cover:
-  platform: rfxtrx
-  automatic_add: False
-  devices:
-    071a03000d080601: 
-      name: Raam achter
-    071a03000d080602:
-      name: Raam zijkant
-    071a03000d080603:
-      name: Raam Links voor
-    071a03000d080604:
-      name: Raam Midden voor
-    071a03000d080609:
-      name: Raam Rechts voor
+  - platform: rfxtrx
+    automatic_add: False
+    devices:
+      071a03000d080601: 
+        name: Raam achter
+      071a03000d080602:
+        name: Raam zijkant
+      071a03000d080603:
+        name: Raam Links voor
+      071a03000d080604:
+        name: Raam Midden voor
+      071a03000d080609:
+        name: Raam Rechts voor
+
+  - platform: template
+    covers:
+        open_cover:
+          service: cover.open_cover
+          entity_id: cover.raam_midden_voor
+        close_cover:
+          service: cover.close_cover
+          entity_id: cover.raam_midden_voor
+ 
 
 media_player:
   - platform: cast
@@ -171,17 +190,6 @@ switch:
     
 #
 # Attempt to combine covers
-  - platform: template
-    covers:
-      rightmost:
-        value_template "{{ is_state('cover.raam_rechts_voor', 'close' }}"
-        command_open:
-          service: cover.command_open
-          entity_id: cover.raam_midden_voor
-        command_close:
-          service: cover.command_close
-          entity_id: cover.raam_midden_voor
- 
 
 sensor:
 # Weather prediction
