@@ -82,15 +82,6 @@ group:
      - sensor.pws_wind_dir
      - sensor.pws_wind_kph
 
-  balcony_window:
-    entities:
-      - cover.raam_midden_voor
-      - cover.raam_rechts_voor   
-  balcony_master_switch:
-    name: balcony
-    entities:
-      - group.balcony_window
-
 
 frontend:
 
@@ -161,12 +152,18 @@ cover:
 
   - platform: template
     covers:
-        open_cover:
-          service: cover.open_cover
-          entity_id: cover.raam_midden_voor
-        close_cover:
-          service: cover.close_cover
-          entity_id: cover.raam_midden_voor
+       middle:
+         value_template: "{{ is_state('cover.middle', 'unknown') }}"
+         open_cover:
+           service: cover.open_cover
+           entity_id: cover.raam_midden_voor, cover.raam_rechts_voor
+         close_cover:
+           service: cover.close_cover
+           entity_id: cover.raam_midden_voor, cover.raam_rechts_voor
+         stop_cover:
+           service: cover.stop_cover
+           entity_id: cover.raam_midden_voor, cover.raam_rechts_voor
+
  
 
 media_player:

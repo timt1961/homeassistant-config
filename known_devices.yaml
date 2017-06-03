@@ -245,3 +245,19 @@ androidb3276ca67e843db4fritzbox:
   gravatar: tim.timmerman@gmail.com
   track: true
   vendor: OnePlus Technology (Shenzhen) Co., Ltd
+
+lt321572fritzbox:
+  hide_if_away: false
+  mac: 34:64:A9:D3:74:97
+  name: LT321572.fritz.box
+  picture:
+  track: true
+  vendor: Hewlett Packard
+
+lt320103fritzbox:
+  hide_if_away: false
+  mac: 10:4A:7D:A1:DD:BC
+  name: LT320103.fritz.box
+  picture:
+  track: true
+  vendor: Intel Corporate
