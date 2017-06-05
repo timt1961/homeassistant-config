@@ -210,6 +210,9 @@ notify:
     name: Tim
     api_key: !secret pushbullet_key
 
+influxdb:
+  host: 192.168.178.70
+
 automation:
   - alias: 'warn when door opens'
     initial_state: True
