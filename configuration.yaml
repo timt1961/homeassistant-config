@@ -14,6 +14,11 @@ homeassistant:
   customize:
      script.voordeur_open:
        hidden: True 
+     script.deurbel:
+       hidden: True
+     switch.deurbel:
+       icon: mdi:bell-ring
+       assumed_state: false
      device_tracker.rtac68u8110fritzbox:
        friendly_name: ASUS RT AC-68U
        icon: mdi:router-wireless
@@ -38,14 +43,15 @@ homeassistant:
      sensor.pws_visibility_km:
        friendly_name: Zicht (km)
 
-#logger:
-#   default: error
-#   logs:
-#     homeassistant.components.rfxtrx: debug
-#remote:
-#  - platform: harmony
-#    name: Woonkamer
-#    host: 192.168.178.24
+logger:
+   default: error
+   logs:
+     homeassistant.components.rfxtrx: debug
+    
+remote:
+  - platform: harmony
+    name: Tim's hub
+    host: 192.168.178.24
      
 group:
   network:
@@ -125,12 +131,18 @@ mqtt:
 
 # Location/geofencing etc.
 device_tracker:
-   - platform: nmap_tracker
-     hosts: 192.168.178.1/24
-   - platform: owntracks
-     max_gps_accuracy: 200
-     waypoints: True
-       
+#   - platform: nmap_tracker
+#     hosts: 192.168.178.1/24
+#   - platform: owntracks
+#     max_gps_accuracy: 200
+#     waypoints: True
+   - platform: fritz
+   - platform: asuswrt
+     username: admin
+     password: !secret adminpasswd
+     host: 192.168.178.4
+
+     
 rfxtrx:
   device: /dev/ttyUSB0
   debug: True
@@ -163,11 +175,14 @@ switch:
     devices:
       0b110001014206060a010f50:
         name: Voordeur
+      0b110002019ac87e01040f50:
+        name: Deurbel
+        fire_event: True
 
-  - platform: mqtt
-    name: Lamp 1
-    command_topic: "cmnd/lamp1/power"
-    state_topic: "stat/lamp1/+"
+#  - platform: mqtt
+#    name: Lamp 1
+#    command_topic: "cmnd/lamp1/power"
+#    state_topic: "stat/lamp1/+"
     
 
  
@@ -197,6 +212,23 @@ sensor:
       - visibility_km
       - wind_dir
       - wind_kph
+
+  - platform: buienradar
+    monitored_conditions:
+      - stationname
+      - symbol
+      - humidity
+      - temperature
+      - groundtemperature
+      - windspeed
+      - windforce
+      - winddirection
+      - windazimuth
+      - pressure
+      - visibility
+      - windgust
+      - precipitation
+      - irradiance
 # Living room camera
 camera:
   - platform: foscam
@@ -210,8 +242,13 @@ notify:
     name: Tim
     api_key: !secret pushbullet_key
 
+
 influxdb:
   host: 192.168.178.70
+
+wemo:
+  static:
+    - 192.168.178.42
 
 automation:
   - alias: 'warn when door opens'
@@ -247,15 +284,24 @@ automation:
     action: 
       service: homeassistant.turn_off
       entity_id: script.voordeur_open
+  - alias: 'deurbel gaat'
+    hide_entity: True
+    trigger:
+      platform: event
+      event_type: button_pressed
+      event_data: {"entity_id": "switch.deurbel"}
+    action:
+       service: homeassistant.turn_on
+       entity_id: script.deurbel
 
-script:
-  voordeur_open:
-    alias: 'voordeur staat open'
-    sequence:
-      - delay:
-          minutes: 5
-      - service: notify.Tim
-        data:
-          message: 'De voordeur staat nog open'
-          title: 'Warning front door open'
+script: !include scripts.yaml
+#  voordeur_open:
+#    alias: 'voordeur staat open'
+#    sequence:
+#      - delay:
+#          minutes: 5
+#      - service: notify.Tim
+#        data:
+#          message: 'De voordeur staat nog open'
+#          title: 'Warning front door open'
 

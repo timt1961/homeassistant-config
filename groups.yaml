@@ -1,0 +1,6 @@
+woonkamer:
+  entities:
+  - media_player.woonkamer
+  - sensor.cresta_woonkamer_temperature
+  name: Woonkamer
+  view: false

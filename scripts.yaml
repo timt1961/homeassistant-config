@@ -1,0 +1,16 @@
+voordeur_open:
+  alias: 'voordeur staat open'
+  sequence:
+    - delay:
+        minutes: 5
+    - service: notify.Tim
+      data:
+        message: 'De voordeur staat nog open'
+        title: 'Warning front door open'
+deurbel:
+  alias: 'Deurbel gaat'
+  sequence:
+    - service: notify.Tim
+      data:
+        message: 'De deurbel gaat'
+        title: 'Deurbel'
