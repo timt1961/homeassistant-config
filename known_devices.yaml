@@ -1,247 +1,270 @@
 
-00626e68a49d:
+googlehome:
   hide_if_away: false
+  icon:
+  mac: 48:D6:D5:D7:CD:89
+  name: Google-Home
+  picture:
+  track: true
+  vendor: Google, Inc.
+
+harmonyhub:
+  hide_if_away: false
+  icon:
+  mac: 00:04:20:E8:68:B1
+  name: HarmonyHub
+  picture:
+  track: false
+  vendor: Slim Devices, Inc.
+
+holder:
+  hide_if_away: false
+  icon:
+  mac: C0:3F:D5:69:BF:61
+  name: Holder
+  picture:
+  track: true
+  vendor: Elitegroup Computer Systems Co.,Ltd.
+
+homer:
+  hide_if_away: false
+  icon:
+  mac: B8:27:EB:D5:DB:31
+  name: Homer
+  picture:
+  track: false
+  vendor: Raspberry Pi Foundation
+
+note3:
+  hide_if_away: false
+  icon:
+  mac: 48:5A:3F:4D:34:4C
+  name: Note3
+  picture:
+  track: true
+  vendor: WISOL
+
+pc19216817842:
+  hide_if_away: false
+  icon:
+  mac: 60:38:E0:E9:DB:09
+  name: PC-192-168-178-42
+  picture:
+  track: true
+  vendor: Belkin International Inc.
+
+pc19216817857:
+  hide_if_away: false
+  icon:
   mac: 00:62:6E:68:A4:9D
-  name: Foscam C1
+  name: PC-192-168-178-57
   picture:
   track: true
+  vendor: unknown
 
-chromecastfritzbox:
+pc19216817882:
   hide_if_away: false
-  mac: 54:60:09:0A:16:2E
-  name: Chromecast
+  icon:
+  mac: 60:38:E0:E9:05:C9
+  name: PC-192-168-178-82
+  picture:
+  track: false
+  vendor: Belkin International Inc.
+
+printerlan:
+  hide_if_away: false
+  icon:
+  mac: 30:CD:A7:A2:21:02
+  name: Printer-LAN
   picture:
   track: true
+  vendor: Samsung Electronics Co.,Ltd
 
-roamerfritzbox:
+rtac68u8110:
   hide_if_away: false
+  icon:
+  mac: 38:D5:47:1F:81:10
+  name: RT-AC68U-8110
+  picture:
+  track: true
+  vendor: ASUSTek COMPUTER INC.
+
+roamer:
+  hide_if_away: false
+  icon:
   mac: 08:60:6E:0D:84:41
   name: Roamer
   picture:
   track: true
+  vendor: ASUSTek COMPUTER INC.
 
-androidc71ef92cc08d8d4efritzbox:
+roamer_2:
   hide_if_away: false
-  mac: 48:5A:3F:4D:34:4C
-  name: Note3
-  picture:
-  track: false
-
-switch1fritzbox:
-  hide_if_away: false
-  mac: 90:EF:68:C2:20:9C
-  name: Switch1
+  icon:
+  mac: 60:36:DD:90:22:16
+  name: Roamer
   picture:
   track: true
+  vendor: Intel Corporate
 
-wdtvlivefritzbox:
+soundbar:
   hide_if_away: false
-  mac: 00:90:A9:64:DD:5B
-  name: WDTVLive
+  icon:
+  mac: 10:4F:A8:5E:CC:18
+  name: Soundbar
   picture:
   track: true
+  vendor: Sony Corporation
 
-fritzbox:
+storer:
   hide_if_away: false
-  mac: C8:0E:14:0D:F4:78
-  name: fritz.box
-  picture:
-  track: true
-
-printerlanfritzbox:
-  hide_if_away: false
-  mac: 30:CD:A7:A2:21:02
-  name: Printer
-  picture:
-  track: true
-
-androidd9cbc2191aebf47ffritzbox:
-  hide_if_away: false
-  mac: D8:50:E6:75:66:CA
-  name: Nexus 7 Tim
-  picture:
-  track: true
-
-tvwoonkamerfritzbox:
-  hide_if_away: false
-  mac: 50:7E:5D:C2:72:D9
-  name: TV-woonkamer
-  picture:
-  track: true
-
-4c9efff6ea6b:
-  hide_if_away: false
-  mac: 4C:9E:FF:F6:EA:6B
-  name: 4c9efff6ea6b
-  picture:
-  track: false
-
-esp040d9efritzbox:
-  hide_if_away: false
-  mac: D0:27:00:04:0D:9E
-  name: Lamp Bank
-  picture:
-  track: true
-
-harmonyhubfritzbox:
-  hide_if_away: false
-  mac: 00:04:20:E8:68:B1
-  name: HarmonyHub
-  picture:
-  track: true
-
-roamerfritzbox_2:
-  hide_if_away: false
+  icon:
   mac: 00:11:32:0C:7A:48
   name: Storer
   picture:
   track: true
+  vendor: Synology Incorporated
 
-homeassistant_tim:
+switch1:
   hide_if_away: false
-  mac:
-  name: homeassistant
-  picture:
-  track: false
-
-owntracks_tim:
-  hide_if_away: false
-  mac: 94:65:2D:23:8B:7F
-  name: Tim
-  picture:
-  gravatar: tim.timmerman@gmail.com
-  track: true
-
-androidecd35bc7245a313afritzbox:
-  hide_if_away: false
-  mac: 84:EB:18:12:09:2E
-  name: Moto 360
-  picture:
-  track: false
-
-ps4151a9efritzbox:
-  hide_if_away: false
-  mac: 80:EA:23:66:E1:58
-  name: PS4-151A9E.fritz.box
+  icon:
+  mac: 90:EF:68:C2:20:9C
+  name: Switch1
   picture:
   track: true
+  vendor: Zyxel Communications Corporation
 
-roamerfritzbox_3:
+tvwoonkamer:
   hide_if_away: false
-  mac: 60:36:DD:90:22:16
-  name: Roamer.fritz.box
+  icon:
+  mac: 50:7E:5D:C2:72:D9
+  name: TV-woonkamer
   picture:
   track: true
-  vendor:
+  vendor: Arcadyan Technology Corporation
 
-androidcf8137accb28335dfritzbox:
+amazon5512fad5f:
   hide_if_away: false
-  mac: E4:90:7E:9F:CC:42
-  name: android-cf8137accb28335d.fritz.box
+  icon:
+  mac: 40:B4:CD:B3:98:D9
+  name: Alexa
   picture:
-  track: false
-  vendor:
+  track: true
+  vendor: Amazon Technologies Inc.
 
-android9c8eaecde5fb53aafritzbox:
+android18e55dbdd6f93158:
   hide_if_away: false
-  mac: E0:98:61:70:73:DF
-  name: android-9c8eaecde5fb53aa.fritz.box
+  icon:
+  mac: 90:06:28:83:C9:5D
+  name: android-18e55dbdd6f93158
   picture:
-  track: false
-  vendor:
+  track: true
+  vendor: Samsung Electronics Co.,Ltd
 
-android466a73f9b8c4db26fritzbox:
+android19604ae131ab5391:
   hide_if_away: false
-  mac: B8:64:91:B1:9F:FB
-  name: android-466a73f9b8c4db26.fritz.box
+  icon:
+  mac: 70:AF:24:0F:45:F6
+  name: android-19604ae131ab5391
   picture:
-  track: false
-  vendor:
+  track: true
+  vendor: TP Vision Belgium NV
 
-esp07a50afritzbox:
+android645bc941b5487643:
   hide_if_away: false
-  mac: 60:01:94:07:A5:0A
-  name: ESP-07A50A.fritz.box
-  picture:
-  track: false
-  vendor:
-
-esp071fe7fritzbox:
-  hide_if_away: false
-  mac: 60:01:94:07:1F:E7
-  name: ESP-071FE7.fritz.box
-  picture:
-  track: false
-  vendor:
-
-androidc2f0407f8a524011fritzbox:
-  hide_if_away: false
-  mac: 9C:5C:8E:E3:DE:1E
-  name: android-c2f0407f8a524011.fritz.box
-  picture:
-  track: false
-  vendor:
-
-chromecastfritzbox_2:
-  hide_if_away: false
-  mac: 10:4F:A8:5E:CC:18
-  name: Chromecast.fritz.box
-  picture:
-  track: false
-  vendor:
-
-android645bc941b5487643fritzbox:
-  hide_if_away: false
+  icon:
   mac: 50:46:5D:15:91:13
-  name: android-645bc941b5487643.fritz.box
-  picture:
-  track: false
-  vendor:
-
-androidc56b08947e9bdc03fritzbox:
-  hide_if_away: false
-  mac: 14:32:D1:F3:09:52
-  name: android-c56b08947e9bdc03.fritz.box
-  picture:
-  track: false
-  vendor:
-
-iphonefritzbox:
-  hide_if_away: false
-  mac: 60:92:17:0E:D7:3B
-  name: iPhone.fritz.box
-  picture:
-  track: false
-  vendor:
-
-rtac68u8110fritzbox:
-  hide_if_away: false
-  mac: 38:D5:47:1F:81:10
-  name: RT-AC68U
+  name: android-645bc941b5487643
   picture:
   track: true
-  vendor:
+  vendor: ASUSTek COMPUTER INC.
 
-raspberrypifritzbox:
+androidfdeb3142e0de428:
   hide_if_away: false
+  icon:
+  mac: 94:65:2D:23:8B:7F
+  name: Oneplus 3T
+  picture:
+  track: true
+  vendor: OnePlus Technology (Shenzhen) Co., Ltd
+
+fritzbox:
+  hide_if_away: false
+  icon:
+  mac: C8:0E:14:0D:F4:78
+  name: Fritzbox
+  picture:
+  track: true
+  vendor: AVM Audiovisuelles Marketing und Computersysteme GmbH
+
+raspberrypi:
+  hide_if_away: false
+  icon:
+  mac: B8:27:EB:06:AE:18
+  name: raspberrypi
+  picture:
+  track: true
+  vendor: Raspberry Pi Foundation
+
+tester:
+  hide_if_away: false
+  icon:
   mac: B8:27:EB:9A:4F:83
-  name: raspberrypi.fritz.box
+  name: tester
   picture:
   track: true
-  vendor:
+  vendor: Raspberry Pi Foundation
+
+4c9efff6ea6b:
+  hide_if_away: false
+  icon:
+  mac: 4C:9E:FF:F6:EA:6B
+  name: 4c9efff6ea6b
+  picture:
+  track: true
+  vendor: Zyxel Communications Corporation
+
+pc19216817830:
+  hide_if_away: false
+  icon:
+  mac: 74:75:48:2A:5D:2D
+  name: PC-192-168-178-30
+  picture:
+  track: true
+  vendor: Amazon Technologies Inc.
 
 android1bf45eab15b87b8bfritzbox:
   hide_if_away: false
+  icon:
   mac: 58:48:22:7A:BB:A9
-  name: Saskia
+  name: android-1bf45eab15b87b8b.fritz.box
   picture:
-  track: True
+  track: true
   vendor: Sony Mobile Communications AB
 
-androidb3276ca67e843db4fritzbox:
+androidc2f0407f8a524011:
   hide_if_away: false
-  mac: 94:65:2D:23:8B:7F
-  name: Tim
-  gravatar: tim.timmerman@gmail.com
+  icon:
+  mac: 9C:5C:8E:E3:DE:1E
+  name: android-c2f0407f8a524011
+  picture:
   track: true
-  vendor: OnePlus Technology (Shenzhen) Co., Ltd
+  vendor: ASUSTek COMPUTER INC.
+
+33a7f0874d29812360f3316e57a373ba:
+  hide_if_away: false
+  icon:
+  mac: 4C:80:93:C5:2C:13
+  name: 33a7f0874d29812360f3316e57a373ba
+  picture:
+  track: true
+  vendor: Intel Corporate
+
+saskiesaskiao:
+  hide_if_away: false
+  icon:
+  mac: B8:EE:65:9F:F2:4A
+  name: SASKIE--Saskiao
+  picture:
+  track: true
+  vendor: Liteon Technology Corporation
