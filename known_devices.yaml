@@ -1,7 +1,7 @@
 
 googlehome:
   hide_if_away: false
-  icon:
+  icon: mdi:google-home
   mac: 48:D6:D5:D7:CD:89
   name: Google-Home
   picture:
@@ -41,7 +41,7 @@ note3:
   mac: 48:5A:3F:4D:34:4C
   name: Note3
   picture:
-  track: true
+  track: false
   vendor: WISOL
 
 pc19216817842:
@@ -50,7 +50,7 @@ pc19216817842:
   mac: 60:38:E0:E9:DB:09
   name: PC-192-168-178-42
   picture:
-  track: true
+  track: false
   vendor: Belkin International Inc.
 
 pc19216817857:
@@ -59,7 +59,7 @@ pc19216817857:
   mac: 00:62:6E:68:A4:9D
   name: PC-192-168-178-57
   picture:
-  track: true
+  track: false
   vendor: unknown
 
 pc19216817882:
@@ -91,7 +91,7 @@ rtac68u8110:
 
 roamer:
   hide_if_away: false
-  icon:
+  icon: mdi:laptop
   mac: 08:60:6E:0D:84:41
   name: Roamer
   picture:
@@ -100,7 +100,7 @@ roamer:
 
 roamer_2:
   hide_if_away: false
-  icon:
+  icon: mdi:laptop
   mac: 60:36:DD:90:22:16
   name: Roamer
   picture:
@@ -109,7 +109,7 @@ roamer_2:
 
 soundbar:
   hide_if_away: false
-  icon:
+  icon: mdi:speaker
   mac: 10:4F:A8:5E:CC:18
   name: Soundbar
   picture:
@@ -118,7 +118,7 @@ soundbar:
 
 storer:
   hide_if_away: false
-  icon:
+  icon: mdi:nas
   mac: 00:11:32:0C:7A:48
   name: Storer
   picture:
@@ -127,7 +127,7 @@ storer:
 
 switch1:
   hide_if_away: false
-  icon:
+  icon: mdi:switch
   mac: 90:EF:68:C2:20:9C
   name: Switch1
   picture:
@@ -136,7 +136,7 @@ switch1:
 
 tvwoonkamer:
   hide_if_away: false
-  icon:
+  icon: mdi:television
   mac: 50:7E:5D:C2:72:D9
   name: TV-woonkamer
   picture:
@@ -145,7 +145,7 @@ tvwoonkamer:
 
 amazon5512fad5f:
   hide_if_away: false
-  icon:
+  icon: mdi:amazon-alexa
   mac: 40:B4:CD:B3:98:D9
   name: Alexa
   picture:
@@ -154,117 +154,86 @@ amazon5512fad5f:
 
 android18e55dbdd6f93158:
   hide_if_away: false
-  icon:
+  icon: mdi:tablet-android
   mac: 90:06:28:83:C9:5D
-  name: android-18e55dbdd6f93158
+  name: Samsung Tablet
   picture:
   track: true
   vendor: Samsung Electronics Co.,Ltd
 
 android19604ae131ab5391:
   hide_if_away: false
-  icon:
+  icon: mdi:television
   mac: 70:AF:24:0F:45:F6
-  name: android-19604ae131ab5391
-  picture:
-  track: true
+  name: TV Wireless
+  picture: mdi:television
+  track: false
   vendor: TP Vision Belgium NV
 
-android645bc941b5487643:
-  hide_if_away: false
-  icon:
-  mac: 50:46:5D:15:91:13
-  name: android-645bc941b5487643
-  picture:
-  track: true
-  vendor: ASUSTek COMPUTER INC.
 
 androidfdeb3142e0de428:
   hide_if_away: false
-  icon:
+  icon: mdi:cellphone-android
   mac: 94:65:2D:23:8B:7F
   name: Oneplus 3T
-  picture:
+  picture: 
   track: true
   vendor: OnePlus Technology (Shenzhen) Co., Ltd
 
 fritzbox:
   hide_if_away: false
-  icon:
+  icon: mdi:router-wireless
   mac: C8:0E:14:0D:F4:78
   name: Fritzbox
-  picture:
+  picture: 
   track: true
   vendor: AVM Audiovisuelles Marketing und Computersysteme GmbH
 
-raspberrypi:
-  hide_if_away: false
-  icon:
-  mac: B8:27:EB:06:AE:18
-  name: raspberrypi
-  picture:
-  track: true
-  vendor: Raspberry Pi Foundation
 
-tester:
+switch2:
   hide_if_away: false
-  icon:
-  mac: B8:27:EB:9A:4F:83
-  name: tester
-  picture:
-  track: true
-  vendor: Raspberry Pi Foundation
-
-4c9efff6ea6b:
-  hide_if_away: false
-  icon:
+  icon: mdi:switch
   mac: 4C:9E:FF:F6:EA:6B
-  name: 4c9efff6ea6b
-  picture:
+  name: switch2
+  picture: 
   track: true
   vendor: Zyxel Communications Corporation
 
 pc19216817830:
   hide_if_away: false
-  icon:
+  icon: mdi:book-open
   mac: 74:75:48:2A:5D:2D
-  name: PC-192-168-178-30
+  name: Kindle
   picture:
   track: true
   vendor: Amazon Technologies Inc.
 
-android1bf45eab15b87b8bfritzbox:
-  hide_if_away: false
-  icon:
-  mac: 58:48:22:7A:BB:A9
-  name: android-1bf45eab15b87b8b.fritz.box
-  picture:
-  track: true
-  vendor: Sony Mobile Communications AB
-
-androidc2f0407f8a524011:
-  hide_if_away: false
-  icon:
-  mac: 9C:5C:8E:E3:DE:1E
-  name: android-c2f0407f8a524011
-  picture:
-  track: true
-  vendor: ASUSTek COMPUTER INC.
-
-33a7f0874d29812360f3316e57a373ba:
-  hide_if_away: false
-  icon:
-  mac: 4C:80:93:C5:2C:13
-  name: 33a7f0874d29812360f3316e57a373ba
-  picture:
-  track: true
-  vendor: Intel Corporate
-
 saskiesaskiao:
   hide_if_away: false
-  icon:
+  icon: mdi:laptop
   mac: B8:EE:65:9F:F2:4A
   name: SASKIE--Saskiao
   picture:
   track: true
   vendor: Liteon Technology Corporation
+
+
+
+sird14c3:
+  hide_if_away: false
+  icon: mdi:radio
+  mac: 00:22:61:53:FB:20
+  name: SIRD-14-C3
+  picture: 
+  track: true
+  vendor: Frontier Silicon Ltd
+
+ps4151a9e:
+  hide_if_away: false
+  icon: mdi:playstation
+  mac: 80:EA:23:66:E1:58
+  name: PS4-151A9E
+  picture:
+  track: true
+  vendor: Wistron Neweb Corporation
+

@@ -1,0 +1,145 @@
+- id: door_open
+  alias: 'warn when door opens'
+  initial_state: 'True'
+  hide_entity: 'True'
+  trigger:
+    platform: state
+    entity_id: switch.voordeur
+    from: 'off'
+    to: 'on'
+  action:
+    service: notify.Tim
+    data:
+      message: "Door open"
+      title: "Door open"
+
+- id: still_open
+  alias: "voordeur nog open"
+  hide_entity: 'True'
+  trigger:
+    platform: state
+    entity_id: switch.voordeur
+    from: 'off'
+    to: 'on'
+  action:
+    service: homeassistant.turn_on
+    entity_id: script.voordeur_open
+
+- id: door_close
+  alias: 'voordeur dicht'
+  hide_entity: 'True'
+  trigger:
+    platform: state
+    entity_id: switch.voordeur
+    from: 'on'
+    to: 'off'
+  action:
+    service: homeassistant.turn_off
+    entity_id: script.voordeur_open
+
+- id: bell_ring
+  alias: 'deurbel gaat'
+  hide_entity: 'True'
+  trigger:
+    platform: event
+    event_type: button_pressed
+    event_data: {"entity_id": "switch.deurbel"}
+  action:
+    service: homeassistant.turn_on
+    entity_id: script.deurbel
+
+- id: sunscreen_up
+  alias: 'Sunscreen down'
+  initial_state: 'on'
+  trigger:
+    platform: time
+    minutes: '/5'
+    seconds: 0
+  condition:
+    condition: and
+    conditions:
+      - condition: numeric_state
+        entity_id: sun.sun
+        value_template: '{{ state.attributes.elevation }}'
+        above: 0  ## Sun should be above the horizon, not below
+      - condition: sun
+        before: sunset
+        before_offset: -00:45:00
+        ## Some time before sunset, there's no point in rolling out anymore
+      - condition: numeric_state
+        entity_id: sensor.br_wind_force
+        below: 5   ## I still have to tune this value
+      - condition: numeric_state
+        entity_id: sensor.br_precipitation_forecast_total
+        below: 0.1  ## Almost no rain in the next 30 minutes
+      - condition: template
+        value_template: '{{ now().month > 2 }}'    ## Starting March
+      - condition: template
+        value_template: '{{ now().month < 10 }}'   ## Ending October
+      - condition: numeric_state
+        entity_id: sensor.br_irradiance
+        above: 300
+        ## This indicates direct sunlight on my location (as in: not cloudy)
+      - condition: template
+        value_template:  ' {{ as_timestamp(now()) - as_timestamp(states.automation.sunscreen_down.attributes.last_triggered) | int > 1800}}'
+        # prevents that automation is triggered multiple times in a short amount of time. Checks last time automation is triggered,
+        # if more then 1800 seconds (30min), condition becomes TRUE
+      - condition: template
+        value_template: '{{as_timestamp(states.automation.sunscreen_down.attributes.last_triggered) | int <= as_timestamp(states.automation.sunscreen_up.attributes.last_triggered) | int }}'
+        # this automation can only be triggered if timestamp of last_triggered time is OLDER than the timestamp of 
+        # last_triggered time of the "screen up" automation. This condition prevents that the automation is 
+        # triggered again if sunscreen is already down. Better would be to have a real sensor checking if sunscreen 
+        # is up or down but currently I don't have a sensor in place. The | int is used to catch the fact that 
+        # on start up both triggers report 'none' and hence this condition would never become true. 
+        # The int makes it such that value = 0 for both and hence trigger can be executed.
+
+  action:
+    - service: cover.close_cover
+      entity_id: cover.raam_links_voor
+    - service: cover.close_cover
+      entity_id: cover.raam_midden_voor
+    - service: cover.close_cover
+      entity_id: cover.raam_rechts_voor
+    - service: notify.Tim
+      data:
+        message: 'Het zonnescherm is naar beneden gedaan ivm de zon'
+
+- alias: 'Sunscreen up'
+  initial_state: 'on'
+  trigger:
+    - platform: sun
+      event: sunset
+      offset: -00:45:00
+    - platform: numeric_state
+      entity_id: sensor.br_wind_force
+      above: 7
+    - platform: numeric_state
+      entity_id: sensor.br_precipitation_forecast_total
+      above: 0.2
+    - platform: numeric_state
+      entity_id: sensor.br_irradiance
+      below: 100
+      for:
+        minutes: 5
+  condition:
+    condition: and
+    conditions:
+      - condition: template
+        value_template: '{{as_timestamp(states.automation.sunscreen_up.attributes.last_triggered) | int <= as_timestamp(states.automation.sunscreen_down.attributes.last_triggered) | int }}'
+        # this automation can only be triggered if timestamp of last_triggered time is OLDER than the timestamp of 
+        # last_triggered time of the "screen down" automation. This condition prevents that the automation is 
+        # triggered again if sunscreen is already up. Better would be to have a real sensor checking if sunscreen 
+        # is up or down but currently I don't have a sensor in place. The | int is used to catch the fact that on
+        # start up both triggers report 'none' and hence this condition would never become true. The int makes it
+        # such that value = 0 for both and hence trigger can be executed.
+
+  action:
+    - service: cover.open_cover
+      entity_id: cover.raam_rechts_voor
+    - service: cover.open_cover
+      entity_id: cover.raam_links_voor
+    - service: cover.open_cover
+      entity_id: cover.raam_midden_voor
+    - service: notify.Tim
+      data:
+        message: 'Het zonnescherm is weer ingetrokken'

@@ -19,6 +19,9 @@ homeassistant:
      switch.deurbel:
        icon: mdi:bell-ring
        assumed_state: false
+     switch.voordeur:
+       icon: mdi:door
+       assumed_state: false    
      device_tracker.rtac68u8110:
        friendly_name: ASUS RT AC-68U
        icon: mdi:router-wireless
@@ -72,8 +75,6 @@ homeassistant:
      
 logger:
    default: error
-   logs:
-     homeassistant.components.rfxtrx: debug
     
 remote:
   - platform: harmony
@@ -91,10 +92,12 @@ group:
       - device_tracker.googlehome
       - device_tracker.amazon5512fad5f
       - device_tracker.switch1
-      - device_tracker.switch2
+      - device_tracker.Switch2
       - device_tracker.harmonyhub
       - device_tracker.roamer
       - device_tracker.storer
+      - device_tracker.tvwoonkamer
+      - device_tracker.holder
 
   woonkamer:
     name: Woonkamer
@@ -121,6 +124,9 @@ group:
      - sensor.pws_visibility_km
      - sensor.pws_wind_dir
      - sensor.pws_wind_kph
+     - sensor.pws_station_id
+     - sensor.pws_wind_speed
+
   buienradar:
     name: Buienradar
     entities:
@@ -130,13 +136,17 @@ group:
      - sensor.br_ground_temperature
      - sensor.br_humidity
      - sensor.br_irradiance
-     - sensor.br_precipation
+     - sensor.br_precipitation
+     - sensor.br_precipitation_average
+     - sensor.br_precipitation_forecast_average
+     - sensor.br_precipitation_forecast_total
      - sensor.br_pressure
      - sensor.br_visibility
      - sensor.br_wind_direction
      - sensor.br_wind_direction_azimuth
      - sensor.br_wind_force
      - sensor.br_wind_gust
+     - sensor.br_wind_speed
      
      
    
@@ -157,6 +167,8 @@ config:
 
 # Discover some devices automatically
 discovery:
+  ignore:
+    - frontier_silicon
 
 # Allows you to issue voice commands from the frontend in enabled browsers
 conversation:
@@ -186,9 +198,11 @@ device_tracker:
    - platform: fritz
      username: admin
      password: !secret adminpasswd
+     track_new_devices: false
      host: 192.168.178.1
    - platform: nmap_tracker
      hosts: 192.168.178.0/24
+     track_new_devices: false
 
      
 rfxtrx:
@@ -262,6 +276,7 @@ sensor:
       - wind_kph
 
   - platform: buienradar
+    timeframe: 30
     monitored_conditions:
       - stationname
       - symbol
@@ -277,6 +292,9 @@ sensor:
       - windgust
       - precipitation
       - irradiance
+      - precipitation_forecast_total
+      - precipitation_forecast_average
+
 # Living room camera
 camera:
   - platform: foscam
@@ -298,49 +316,7 @@ wemo:
   static:
     - 192.168.178.42
 
-automation:
-  - alias: 'warn when door opens'
-    initial_state: True
-    hide_entity: True
-    trigger: 
-      platform: state
-      entity_id: switch.voordeur
-      from: 'off'
-      to: 'on'
-    action: 
-      service: notify.Tim
-      data:
-        message: "Door open"
-        title: "Door open"
-  - alias: "voordeur nog open"
-    hide_entity: True
-    trigger:
-      platform: state
-      entity_id: switch.voordeur
-      from: 'off'
-      to: 'on'
-    action:
-      service: homeassistant.turn_on
-      entity_id: script.voordeur_open
-  - alias: 'voordeur dicht'
-    hide_entity: True
-    trigger:
-      platform: state
-      entity_id: switch.voordeur
-      from: 'on'
-      to: 'off'
-    action: 
-      service: homeassistant.turn_off
-      entity_id: script.voordeur_open
-  - alias: 'deurbel gaat'
-    hide_entity: True
-    trigger:
-      platform: event
-      event_type: button_pressed
-      event_data: {"entity_id": "switch.deurbel"}
-    action:
-       service: homeassistant.turn_on
-       entity_id: script.deurbel
+automation: !include automations.yaml
 
 script: !include scripts.yaml
 
