@@ -26,15 +26,6 @@ holder:
   track: true
   vendor: Elitegroup Computer Systems Co.,Ltd.
 
-homer:
-  hide_if_away: false
-  icon:
-  mac: B8:27:EB:D5:DB:31
-  name: Homer
-  picture:
-  track: false
-  vendor: Raspberry Pi Foundation
-
 note3:
   hide_if_away: false
   icon:
@@ -44,45 +35,36 @@ note3:
   track: false
   vendor: WISOL
 
-pc19216817842:
+foscamc1:
   hide_if_away: false
-  icon:
-  mac: 60:38:E0:E9:DB:09
-  name: PC-192-168-178-42
-  picture:
-  track: false
-  vendor: Belkin International Inc.
-
-pc19216817857:
-  hide_if_away: false
-  icon:
+  icon: mdi:cctv
   mac: 00:62:6E:68:A4:9D
-  name: PC-192-168-178-57
+  name: Foscam C1
   picture:
-  track: false
+  track: true
   vendor: unknown
 
-pc19216817882:
+wemocorner:
   hide_if_away: false
-  icon:
+  icon: mdi:lightbulb
   mac: 60:38:E0:E9:05:C9
-  name: PC-192-168-178-82
+  name: Corner
   picture:
-  track: false
+  track: true
   vendor: Belkin International Inc.
 
-printerlan:
+laserprinter:
   hide_if_away: false
   icon:
   mac: 30:CD:A7:A2:21:02
-  name: Printer-LAN
+  name: Printer
   picture:
   track: true
   vendor: Samsung Electronics Co.,Ltd
 
 rtac68u8110:
   hide_if_away: false
-  icon:
+  icon: mdi:router-wireless
   mac: 38:D5:47:1F:81:10
   name: RT-AC68U-8110
   picture:
@@ -104,7 +86,7 @@ roamer_2:
   mac: 60:36:DD:90:22:16
   name: Roamer
   picture:
-  track: true
+  track: false
   vendor: Intel Corporate
 
 soundbar:
@@ -143,7 +125,7 @@ tvwoonkamer:
   track: true
   vendor: Arcadyan Technology Corporation
 
-amazon5512fad5f:
+alexa_woonkamer:
   hide_if_away: false
   icon: mdi:amazon-alexa
   mac: 40:B4:CD:B3:98:D9
@@ -152,7 +134,7 @@ amazon5512fad5f:
   track: true
   vendor: Amazon Technologies Inc.
 
-android18e55dbdd6f93158:
+samsunga6:
   hide_if_away: false
   icon: mdi:tablet-android
   mac: 90:06:28:83:C9:5D
@@ -171,15 +153,16 @@ android19604ae131ab5391:
   vendor: TP Vision Belgium NV
 
 
-androidfdeb3142e0de428:
+oneplus3t:
   hide_if_away: false
   icon: mdi:cellphone-android
   mac: 94:65:2D:23:8B:7F
-  name: Oneplus 3T
+  name: Tim
+  gravatar: tim.timmerman@gmail.com
   picture: 
   track: true
   vendor: OnePlus Technology (Shenzhen) Co., Ltd
-
+ 
 fritzbox:
   hide_if_away: false
   icon: mdi:router-wireless
@@ -199,7 +182,7 @@ switch2:
   track: true
   vendor: Zyxel Communications Corporation
 
-pc19216817830:
+kindle:
   hide_if_away: false
   icon: mdi:book-open
   mac: 74:75:48:2A:5D:2D
@@ -212,28 +195,93 @@ saskiesaskiao:
   hide_if_away: false
   icon: mdi:laptop
   mac: B8:EE:65:9F:F2:4A
-  name: SASKIE--Saskiao
+  name: Laptop Saskia
   picture:
   track: true
   vendor: Liteon Technology Corporation
 
 
 
-sird14c3:
+internet_radio:
   hide_if_away: false
   icon: mdi:radio
   mac: 00:22:61:53:FB:20
-  name: SIRD-14-C3
+  name: Internet Radio
   picture: 
   track: true
   vendor: Frontier Silicon Ltd
 
-ps4151a9e:
+ps4:
   hide_if_away: false
   icon: mdi:playstation
   mac: 80:EA:23:66:E1:58
-  name: PS4-151A9E
+  name: PS4
   picture:
   track: true
   vendor: Wistron Neweb Corporation
 
+
+wemocouch:
+  hide_if_away: false
+  icon: mdi:lightbulb
+  mac: 60:38:E0:E9:DB:09
+  name: Couch
+  picture:
+  track: true
+
+chromebook:
+  hide_if_away: false
+  icon: mdi:laptop-chromebook
+  mac: 4C:80:93:C5:2C:13
+  name: Chromebook
+  picture:
+  track: true
+
+
+wemocam1:
+  hide_if_away: false
+  icon: mdi:lightbulb
+  mac: 60:38:E0:E8:E6:C5
+  name: Cam1
+  picture:
+  track: true
+
+woonkamertablet:
+  hide_if_away: false
+  icon: mdi:tablet-android
+  mac: 50:46:5D:15:91:13
+  name: woonkamertablet
+  picture:
+  track: true
+
+saksia:
+  hide_if_away: false
+  icon: mdi:smartphone-android
+  mac: 40:40:A7:94:FC:23
+  name: Saskia
+  picture:
+  track: true
+
+tabletsaskia:
+  hide_if_away: false
+  icon: mdi:tablet-android
+  mac: 9C:5C:8E:E3:DE:1E
+  name: Tablet Saskia
+  picture:
+  track: true
+
+minibenedenfritzbox:
+  hide_if_away: false
+  icon:
+  mac: 3C:07:54:06:8D:A4
+  name: Mini-beneden.fritz.box
+  picture:
+  track: true
+
+macerfritzbox:
+  hide_if_away: false
+  icon:
+  mac: 28:37:37:12:73:FB
+  name: Macer.fritz.box
+  picture:
+  track: true

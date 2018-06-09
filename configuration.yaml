@@ -85,19 +85,25 @@ group:
   network:
     name: Network
     entities:
+      - device_tracker.fritzbox
       - device_tracker.rtac68u8110
       - device_tracker.nexuswoonkamer
-      - device_tracker.printerlan
-      - device_tracker.fritzbox
-      - device_tracker.googlehome
-      - device_tracker.amazon5512fad5f
       - device_tracker.switch1
       - device_tracker.Switch2
-      - device_tracker.harmonyhub
-      - device_tracker.roamer
       - device_tracker.storer
-      - device_tracker.tvwoonkamer
       - device_tracker.holder
+      - device_tracker.laserprinter
+      - device_tracker.harmonyhub
+      - device_tracker.googlehome
+      - device_tracker.alexa_woonkamer
+      - device_tracker.roamer
+      - device_tracker.tvwoonkamer
+      - device_tracker.internet_radio
+      - device_tracker.wemocorner
+      - device_tracker.wemocouch
+      - device_tracker.wemocam1
+      - device_tracker.woonkamertablet
+      - device_tracker.chromebook
 
   woonkamer:
     name: Woonkamer
@@ -198,11 +204,14 @@ device_tracker:
    - platform: fritz
      username: admin
      password: !secret adminpasswd
-     track_new_devices: false
+     track_new_devices: true
      host: 192.168.178.1
+     interval_seconds: 60
+     consider_home: 0:03:00
    - platform: nmap_tracker
      hosts: 192.168.178.0/24
-     track_new_devices: false
+     home_interval: 5
+     track_new_devices: true
 
      
 rfxtrx:
@@ -210,19 +219,27 @@ rfxtrx:
   debug: True
 
 cover:
-  platform: rfxtrx
-  automatic_add: False
-  devices:
-    071a03000d080601: 
-      name: Raam achter
-    071a03000d080602:
-      name: Raam zijkant
-    071a03000d080603:
-      name: Raam Links voor
-    071a03000d080604:
-      name: Raam Midden voor
-    071a03000d080609:
-      name: Raam Rechts voor
+  - platform: group
+    name: Front Window
+    entities:
+      - cover.raam_links_voor
+      - cover.raam_midden_voor
+      - cover.raam_rechts_voor
+
+        #cover:
+  - platform: rfxtrx
+    automatic_add: False
+    devices:
+      071a03000d080601: 
+        name: Raam achter
+      071a03000d080602:
+        name: Raam zijkant
+      071a03000d080603:
+        name: Raam Links voor
+      071a03000d080604:
+        name: Raam Midden voor
+      071a03000d080609:
+        name: Raam Rechts voor
 
 media_player:
   - platform: cast
