@@ -72,7 +72,10 @@ homeassistant:
        friendly_name: Wind Gust
      sensor.br_wind_speed:
        friendly_name: Wind Speed
-     
+     group.all_covers:
+       hidden: false
+     group.all_switches:
+       hidden: false     
 logger:
    default: error
     
@@ -82,8 +85,28 @@ remote:
     host: 192.168.178.24
      
 group:
+  default_view: 
+    view: yes
+    icon: mdi:home
+    entities:
+      - group.clock
+      - group.all_covers
+      - group.all_switches
+      - camera.foscam_camera
   network:
     name: Network
+    view: yes
+    entities:
+      - group.networkgroup
+        
+  automations:
+    name: Automations
+    view: yes
+    entities:
+      - automation.sunscreen_down
+      - automation.sunscreen_up
+
+  networkgroup:
     entities:
       - device_tracker.fritzbox
       - device_tracker.rtac68u8110
@@ -115,6 +138,15 @@ group:
     name: Date and Time
     entities:
       - sensor.date__time
+      - sensor.cresta_woonkamer_temperature
+        
+  Weather:
+    name: Weather
+    view: yes
+    entities:
+       - group.wunderground
+       - group.buienradar
+
 
   Wunderground:
     name: Weather Underground
@@ -212,6 +244,13 @@ device_tracker:
      hosts: 192.168.178.0/24
      home_interval: 5
      track_new_devices: true
+     #
+     # Use ping platform for known hosts. Make sure mobiles always get the right IP
+     #   - platform: ping
+     # interval_seconds: 60
+     #hosts:
+     # - tim: 192.168.178.XXX
+     # - saskia: 192.168.178.XXX 
 
      
 rfxtrx:

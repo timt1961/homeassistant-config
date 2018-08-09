@@ -285,3 +285,43 @@ macer:
   name: Macer
   picture:
   track: true
+
+android9c8eaecde5fb53aafritzbox:
+  hide_if_away: false
+  icon:
+  mac: E0:98:61:70:73:DF
+  name: android-9c8eaecde5fb53aa.fritz.box
+  picture:
+  track: true
+
+s150736:
+  hide_if_away: false
+  icon:
+  mac: 10:4A:7D:53:54:30
+  name: s150736
+  picture:
+  track: true
+
+sird14c3fritzbox:
+  hide_if_away: false
+  icon:
+  mac: 00:22:61:53:FB:21
+  name: SIRD-14-C3.fritz.box
+  picture:
+  track: true
+
+iphonefritzbox:
+  hide_if_away: false
+  icon:
+  mac: 48:74:6E:65:1D:CB
+  name: iPhone.fritz.box
+  picture:
+  track: true
+
+booker:
+  hide_if_away: false
+  icon:
+  mac: 98:01:A7:89:8A:A7
+  name: booker
+  picture:
+  track: true
