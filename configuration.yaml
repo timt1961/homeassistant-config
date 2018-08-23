@@ -98,6 +98,7 @@ group:
     view: yes
     entities:
       - group.networkgroup
+      - group.fritzbox
         
   automations:
     name: Automations
@@ -127,6 +128,14 @@ group:
       - device_tracker.wemocam1
       - device_tracker.woonkamertablet
       - device_tracker.chromebook
+  
+  fritzbox:
+    entities:
+      - sensor.fritz_netmonitor
+        #        .is_linked
+        # - sensor.fritz_netmonitor.is_connected
+        #- sensor.fritz_netmonitor.external_ip
+        #- sensor.fritz_netmonitor.uptime
 
   woonkamer:
     name: Woonkamer
@@ -351,6 +360,8 @@ sensor:
       - precipitation_forecast_total
       - precipitation_forecast_average
 
+  - platform: fritzbox_netmonitor
+
 # Living room camera
 camera:
   - platform: foscam
@@ -371,6 +382,8 @@ influxdb:
 wemo:
   static:
     - 192.168.178.42
+    - 192.168.178.84
+    - 192.168.178.37
 
 automation: !include automations.yaml
 
