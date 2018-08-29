@@ -334,18 +334,18 @@ laptopatg47kqd:
   picture:
   track: true
 
-lt321572:
+sparelaptop1:
   hide_if_away: false
   icon:
   mac: F8:16:54:12:F8:A4
-  name: LT321572
+  name: sparelaptop1
   picture:
   track: true
 
-lt321572asmlcom:
+sparelaptop2:
   hide_if_away: false
   icon:
   mac: 34:64:A9:D3:74:97
-  name: LT321572.asml.com
+  name: spare2
   picture:
   track: true
