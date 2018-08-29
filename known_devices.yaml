@@ -326,11 +326,3 @@ booker:
   picture:
   track: true
 
-laptopatg47kqd:
-  hide_if_away: false
-  icon:
-  mac: 5C:EA:1D:0F:47:FB
-  name: LAPTOP-ATG47KQD
-  picture:
-  track: true
-
