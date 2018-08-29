@@ -326,26 +326,3 @@ booker:
   picture:
   track: true
 
-laptopatg47kqd:
-  hide_if_away: false
-  icon:
-  mac: 5C:EA:1D:0F:47:FB
-  name: LAPTOP-ATG47KQD
-  picture:
-  track: true
-
-sparelaptop1:
-  hide_if_away: false
-  icon:
-  mac: F8:16:54:12:F8:A4
-  name: sparelaptop1
-  picture:
-  track: true
-
-sparelaptop2:
-  hide_if_away: false
-  icon:
-  mac: 34:64:A9:D3:74:97
-  name: spare2
-  picture:
-  track: true
