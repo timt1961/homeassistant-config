@@ -142,12 +142,15 @@ group:
     entities:
       - media_player.woonkamer
       - sensor.cresta_woonkamer_temperature
+      - sensor.cresta_studeerkamer_temperature
 
   clock:
     name: Date and Time
     entities:
       - sensor.date__time
       - sensor.cresta_woonkamer_temperature
+      - sensor.cresta_studeerkamer_temperature
+      - sensor.cresta_slaapkamer_temperature
         
   Weather:
     name: Weather
@@ -203,8 +206,8 @@ frontend:
 http:
   # Uncomment this to add a password (recommended!)
   api_password: !secret http_password
-  ssl_certificate: /etc/letsencrypt/live/holder.timt.org/fullchain.pem
-  ssl_key: /etc/letsencrypt/live/holder.timt.org/privkey.pem
+  ssl_certificate: /config/fullchain.pem
+  ssl_key: /config/privkey.pem
 
 # Checks for available updates
 updater:
@@ -326,6 +329,10 @@ sensor:
     devices:
       0a5207013b0e00d02d0169:
         name: Cresta woonkamer
+      0a5207064e0e01052c0189:
+        name: Cresta studeerkamer
+      0a520703750e0106310189:
+        name: Cresta slaapkamer
 
   - platform: wunderground
     api_key: !secret wunderground_key
