@@ -13,7 +13,7 @@ homeassistant:
   time_zone: Europe/Amsterdam
   customize:
      script.voordeur_open:
-       hidden: True 
+       hidden: True
      script.deurbel:
        hidden: True
      switch.deurbel:
@@ -21,7 +21,7 @@ homeassistant:
        assumed_state: false
      switch.voordeur:
        icon: mdi:door
-       assumed_state: false    
+       assumed_state: false
      device_tracker.rtac68u8110:
        friendly_name: ASUS RT AC-68U
        icon: mdi:router-wireless
@@ -34,58 +34,29 @@ homeassistant:
        icon: mdi:router-wireless
      device_tracker.amazon5512fadf:
        friendly_name: Alexa
-     sensor.pws_temp_c:
-       friendly_name: Buitentemperatuur
-     sensor.pws_wind_dir:
-       friendly_name: Windrichting
-     sensor.pws_wind_kph:
-       friendly_name: Windsnelheid
-     sensor.pws_alerts:
-       friendly_name: Alerts
-     sensor.pws_observation_time:
-       friendly_name: Laatste meting
-     sensor.pws_precip_1hr_metric:
-       friendly_name: Regen (1 uur)
-     sensor.pws_precip_today_metric:
-       friendly_name: Regen vandaag
-     sensor.pws_visibility_km:
-       friendly_name: Zicht (km)
-     sensor.br_ground_temperature:
-       friendly_name: Grond Temperatuur
-     media_player.49pus750212:
-       friendly_name: TV
-     sensor.br_humidity:
-       friendly_name: Humidity
-     sensor.br_irradiance:
-       friendly_name: Irradiance
-     sensor.br_pressure:
-       friendly_name: Pressure
-     sensor.br_stationname:
-       friendly_name: Station Name
-     sensor.br_symbol:
-       friendly_name: Symbol
-     sensor.br_temperature:
-       friendly_name: Air Temperature
-     sensor.br_wind_direction:
-       friendly_name: Wind Direction
-     sensor.br_wind_gust:
-       friendly_name: Wind Gust
-     sensor.br_wind_speed:
-       friendly_name: Wind Speed
      group.all_covers:
        hidden: false
      group.all_switches:
-       hidden: false     
+       hidden: false
 logger:
    default: error
-    
+
 remote:
   - platform: harmony
     name: Tim's hub
     host: 192.168.178.24
-     
+
+climate:
+    platform: nest
+
+fritzbox:
+  devices:
+    host: 192.168.178.1
+    username: !secret fritz_username
+    password: !secret fritz_password
+
 group:
-  default_view: 
+  default_view:
     view: yes
     icon: mdi:home
     entities:
@@ -93,13 +64,17 @@ group:
       - group.all_covers
       - group.all_switches
       - camera.foscam_camera
+      - climate.meerzand
+      - media_player.sird_14_c3
+      - media_player.soundbar
+
   network:
     name: Network
     view: yes
     entities:
       - group.networkgroup
       - group.fritzbox
-        
+
   automations:
     name: Automations
     view: yes
@@ -110,8 +85,6 @@ group:
   networkgroup:
     entities:
       - device_tracker.fritzbox
-      - device_tracker.rtac68u8110
-      - device_tracker.nexuswoonkamer
       - device_tracker.switch1
       - device_tracker.Switch2
       - device_tracker.storer
@@ -120,22 +93,14 @@ group:
       - device_tracker.harmonyhub
       - device_tracker.googlehome
       - device_tracker.alexa_woonkamer
-      - device_tracker.roamer
       - device_tracker.tvwoonkamer
       - device_tracker.internet_radio
       - device_tracker.wemocorner
       - device_tracker.wemocouch
       - device_tracker.wemocam1
       - device_tracker.woonkamertablet
-      - device_tracker.chromebook
-  
-  fritzbox:
-    entities:
-      - sensor.fritz_netmonitor
-        #        .is_linked
-        # - sensor.fritz_netmonitor.is_connected
-        #- sensor.fritz_netmonitor.external_ip
-        #- sensor.fritz_netmonitor.uptime
+      - device_tracker.pc19216817863
+
 
   woonkamer:
     name: Woonkamer
@@ -145,13 +110,13 @@ group:
       - sensor.cresta_studeerkamer_temperature
 
   clock:
-    name: Date and Time
+    name: Date and Time 
     entities:
       - sensor.date__time
       - sensor.cresta_woonkamer_temperature
       - sensor.cresta_studeerkamer_temperature
       - sensor.cresta_slaapkamer_temperature
-        
+
   Weather:
     name: Weather
     view: yes
@@ -159,23 +124,6 @@ group:
        - group.wunderground
        - group.buienradar
 
-
-  Wunderground:
-    name: Weather Underground
-    entities:
-     - sensor.pws_location
-     - sun.sun
-     - sensor.yr_symbol
-     - sensor.pws_alerts
-     - sensor.pws_observation_time
-     - sensor.pws_precip_1hr_metric
-     - sensor.pws_precip_today_metric
-     - sensor.pws_temp_c
-     - sensor.pws_visibility_km
-     - sensor.pws_wind_dir
-     - sensor.pws_wind_kph
-     - sensor.pws_station_id
-     - sensor.pws_wind_speed
 
   buienradar:
     name: Buienradar
@@ -197,9 +145,9 @@ group:
      - sensor.br_wind_force
      - sensor.br_wind_gust
      - sensor.br_wind_speed
-     
-     
-   
+
+
+
 
 frontend:
 
@@ -245,26 +193,36 @@ sun:
 
 # Location/geofencing etc.
 device_tracker:
-   - platform: fritz
-     username: admin
-     password: !secret adminpasswd
-     track_new_devices: true
-     host: 192.168.178.1
-     interval_seconds: 60
-     consider_home: 0:03:00
+        # Disabled because fritz platform does not allow me to filter out devices
+        #   - platform: fritz
+        #username: admin
+        #password: !secret adminpasswd
+        #track_new_devices: true
+        #host: 192.168.178.1
+        #interval_seconds: 60
+        #consider_home: 0:03:00
    - platform: nmap_tracker
      hosts: 192.168.178.0/24
      home_interval: 5
      track_new_devices: true
+     #
+     # Exclude certain laptops
+     exclude:
+       - 192.168.178.83
+       - 192.168.178.40
+   - platform: unifi_direct
+     host: 192.168.178.63
+     username: admin
+     password: !secret unify_password
      #
      # Use ping platform for known hosts. Make sure mobiles always get the right IP
      #   - platform: ping
      # interval_seconds: 60
      #hosts:
      # - tim: 192.168.178.XXX
-     # - saskia: 192.168.178.XXX 
+     # - saskia: 192.168.178.XXX
 
-     
+
 rfxtrx:
   device: /dev/ttyUSB0
   debug: True
@@ -281,7 +239,7 @@ cover:
   - platform: rfxtrx
     automatic_add: False
     devices:
-      071a03000d080601: 
+      071a03000d080601:
         name: Raam achter
       071a03000d080602:
         name: Raam zijkant
@@ -292,8 +250,14 @@ cover:
       071a03000d080609:
         name: Raam Rechts voor
 
+cast:
+  media_player:
+    host: 192.168.178.64
+
 media_player:
-  - platform: cast
+  - platform: frontier_silicon
+    host: 192.168.178.43
+
 
 light:
   - platform: rfxtrx
@@ -301,7 +265,7 @@ light:
 
 switch:
   - platform: rfxtrx
-    automatic_add: False 
+    automatic_add: False
     devices:
       0b110001014206060a010f50:
         name: Voordeur
@@ -313,9 +277,16 @@ switch:
 #    name: Lamp 1
 #    command_topic: "cmnd/lamp1/power"
 #    state_topic: "stat/lamp1/+"
-    
+#
+weather:
+  - platform: buienradar
+  - platform: darksky
+    api_key: !secret dark_sky_key 
 
- 
+nest:
+  client_id: !secret nest_client_id
+  client_secret: !secret nest_secret
+
 
 sensor:
 # Weather prediction
@@ -334,18 +305,20 @@ sensor:
       0a520703750e0106310189:
         name: Cresta slaapkamer
 
-  - platform: wunderground
-    api_key: !secret wunderground_key
+  - platform: darksky
+    api_key: !secret dark_sky_key
+    forecast: 1
+    update_interval: 01:00
     monitored_conditions:
-      - station_id
-      - alerts
-      - observation_time
-      - precip_1hr_metric
-      - precip_today_metric
-      - temp_c
-      - visibility_km
-      - wind_dir
-      - wind_kph
+      - summary
+      - icon
+      - precip_type
+      - precip_intensity
+      - precip_probability
+      - temperature
+      - wind_speed
+      - nearest_storm_distance
+      - nearest_storm_bearing
 
   - platform: buienradar
     timeframe: 30
@@ -368,11 +341,14 @@ sensor:
       - precipitation_forecast_average
 
   - platform: fritzbox_netmonitor
+    host: 192.168.178.1
+    username: !secret fritz_username
+    password: !secret fritz_password
 
 # Living room camera
 camera:
   - platform: foscam
-    ip: 192.168.178.57
+    ip: 192.168.178.27
     port: 88
     username: timt
     password: !secret camera_password
@@ -395,4 +371,3 @@ wemo:
 automation: !include automations.yaml
 
 script: !include scripts.yaml
-

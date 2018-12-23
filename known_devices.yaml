@@ -159,16 +159,16 @@ oneplus3t:
   mac: 94:65:2D:23:8B:7F
   name: Tim
   gravatar: tim.timmerman@gmail.com
-  picture: 
+  picture:
   track: true
   vendor: OnePlus Technology (Shenzhen) Co., Ltd
- 
+
 fritzbox:
   hide_if_away: false
   icon: mdi:router-wireless
   mac: C8:0E:14:0D:F4:78
   name: Fritzbox
-  picture: 
+  picture:
   track: true
   vendor: AVM Audiovisuelles Marketing und Computersysteme GmbH
 
@@ -178,7 +178,7 @@ switch2:
   icon: mdi:switch
   mac: 4C:9E:FF:F6:EA:6B
   name: switch2
-  picture: 
+  picture:
   track: true
   vendor: Zyxel Communications Corporation
 
@@ -200,16 +200,6 @@ saskiesaskiao:
   track: true
   vendor: Liteon Technology Corporation
 
-
-
-internet_radio:
-  hide_if_away: false
-  icon: mdi:radio
-  mac: 00:22:61:53:FB:20
-  name: Internet Radio
-  picture: 
-  track: true
-  vendor: Frontier Silicon Ltd
 
 ps4:
   hide_if_away: false
@@ -302,11 +292,11 @@ s150736:
   picture:
   track: true
 
-sird14c3fritzbox:
+internet_radio:
   hide_if_away: false
-  icon:
+  icon: mdi:radio
   mac: 00:22:61:53:FB:21
-  name: SIRD-14-C3.fritz.box
+  name: Internet Radio
   picture:
   track: true
 
@@ -326,3 +316,67 @@ booker:
   picture:
   track: true
 
+
+pc19216817863:
+  hide_if_away: false
+  icon:
+  mac: FC:EC:DA:89:8D:48
+  name: PC-192-168-178-63
+  picture:
+  track: true
+
+788a2086c408:
+  hide_if_away: false
+  icon:
+  mac: 78:8A:20:86:C4:08
+  name: 788a2086c408
+  picture:
+  track: true
+
+testerfritzbox:
+  hide_if_away: false
+  icon:
+  mac: B8:27:EB:CF:1A:D6
+  name: tester.fritz.box
+  picture:
+  track: true
+
+tlsg105efritzbox:
+  hide_if_away: false
+  icon:
+  mac: B0:4E:26:E7:C6:C1
+  name: TL-SG105E.fritz.box
+  picture:
+  track: true
+
+swsaskiafritzbox:
+  hide_if_away: false
+  icon:
+  mac: B0:4E:26:E7:BB:F2
+  name: SWSASKIA.fritz.box
+  picture:
+  track: true
+
+f8165412f8a4:
+  hide_if_away: false
+  icon:
+  mac: F8:16:54:12:F8:A4
+  name: f8165412f8a4
+  picture:
+  track: true
+
+15aa01ac35180arf:
+  hide_if_away: false
+  icon:
+  mac: 64:16:66:35:F3:28
+  name: 15AA01AC35180ARF
+  picture:
+  track: true
+
+3c5cc4b545de:
+  hide_if_away: false
+  icon:
+  mac: 3C:5C:C4:B5:45:DE
+  name: 3c5cc4b545de
+  picture:
+  track: true

@@ -78,7 +78,7 @@
         value_template: '{{ now().month < 10 }}'   ## Ending October
       - condition: numeric_state
         entity_id: sensor.br_irradiance
-        above: 300
+        above: 450
         ## This indicates direct sunlight on my location (as in: not cloudy)
       - condition: template
         value_template:  ' {{ as_timestamp(now()) - as_timestamp(states.automation.sunscreen_down.attributes.last_triggered) | int > 1800}}'
@@ -86,11 +86,11 @@
         # if more then 1800 seconds (30min), condition becomes TRUE
       - condition: template
         value_template: '{{as_timestamp(states.automation.sunscreen_down.attributes.last_triggered) | int <= as_timestamp(states.automation.sunscreen_up.attributes.last_triggered) | int }}'
-        # this automation can only be triggered if timestamp of last_triggered time is OLDER than the timestamp of 
-        # last_triggered time of the "screen up" automation. This condition prevents that the automation is 
-        # triggered again if sunscreen is already down. Better would be to have a real sensor checking if sunscreen 
-        # is up or down but currently I don't have a sensor in place. The | int is used to catch the fact that 
-        # on start up both triggers report 'none' and hence this condition would never become true. 
+        # this automation can only be triggered if timestamp of last_triggered time is OLDER than the timestamp of
+        # last_triggered time of the "screen up" automation. This condition prevents that the automation is
+        # triggered again if sunscreen is already down. Better would be to have a real sensor checking if sunscreen
+        # is up or down but currently I don't have a sensor in place. The | int is used to catch the fact that
+        # on start up both triggers report 'none' and hence this condition would never become true.
         # The int makes it such that value = 0 for both and hence trigger can be executed.
 
   action:
@@ -118,7 +118,7 @@
       above: 0.2
     - platform: numeric_state
       entity_id: sensor.br_irradiance
-      below: 100
+      below: 200
       for:
         minutes: 5
   condition:
@@ -127,8 +127,8 @@
       - condition: template
         value_template: '{{as_timestamp(states.automation.sunscreen_up.attributes.last_triggered) | int <= as_timestamp(states.automation.sunscreen_down.attributes.last_triggered) | int }}'
         # this automation can only be triggered if timestamp of last_triggered time is OLDER than the timestamp of 
-        # last_triggered time of the "screen down" automation. This condition prevents that the automation is 
-        # triggered again if sunscreen is already up. Better would be to have a real sensor checking if sunscreen 
+        # last_triggered time of the "screen down" automation. This condition prevents that the automation is
+        # triggered again if sunscreen is already up. Better would be to have a real sensor checking if sunscreen
         # is up or down but currently I don't have a sensor in place. The | int is used to catch the fact that on
         # start up both triggers report 'none' and hence this condition would never become true. The int makes it
         # such that value = 0 for both and hence trigger can be executed.
